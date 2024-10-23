@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Mark Tierlist</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            height: 100vh;
+            background: #000; /* Fallback color */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background-image: url('{{ url_for("static", filename="c72ca064-cb39-463b-974c-16673b28c012.jpeg") }}');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2; /* 20% opacity */
+            animation: moveBackground 100s linear infinite;
+            z-index: 0; /* Keep background behind text */
+        }
+
+        @keyframes moveBackground {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(-50vw, -50vh);
+            }
+        }
+
+        h1 {
+            position: relative;
+            z-index: 1; /* Make sure the title is above the background */
+            margin: 0; /* Remove default margins */
+        }
+
+        h2 {
+            position: relative;
+            z-index: 1; /* Make sure the subtitle is above the background */
+            margin: 0; /* Remove default margins */
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <h1>Ultimate Mark Tierlist</h1>
+    <h2>Mark Count: 13</h2>
+</body>
+</html>
